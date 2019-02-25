@@ -30,7 +30,7 @@
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:text="signup here"
-        android:id="@+id/signup"
+        android:id="@+id/signuptext"
         />
 
 
