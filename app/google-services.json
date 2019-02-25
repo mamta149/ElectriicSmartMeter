@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "335412461158",
+    "firebase_url": "https://electriicsmartmeter.firebaseio.com",
+    "project_id": "electriicsmartmeter",
+    "storage_bucket": "electriicsmartmeter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335412461158:android:629328ba5fe2617d",
+        "android_client_info": {
+          "package_name": "e.mamtanegi.electricsmartmeter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335412461158-hkm9v8fg5cog1mnsmkp7ivovc27r91or.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "e.mamtanegi.electricsmartmeter",
+            "certificate_hash": "ae2aa7eddce413d8c510ccb39143b7ec66dab441"
+          }
+        },
+        {
+          "client_id": "335412461158-013c0to9nqkcm1grhtpf1t6eqqbcepjf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "e.mamtanegi.electricsmartmeter",
+            "certificate_hash": "eb7d3bfa00bb4cded5dbc43e8c50f616f9245867"
+          }
+        },
+        {
+          "client_id": "335412461158-mst8fqaslkok7mitev0a6qrfpk88mkrb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5ClbgimtmthyMOZqzJEOC_hS8EC_kIck"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335412461158-mst8fqaslkok7mitev0a6qrfpk88mkrb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

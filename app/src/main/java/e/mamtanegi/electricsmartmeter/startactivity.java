@@ -1,5 +1,6 @@
 package e.mamtanegi.electricsmartmeter;
 
+import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,6 +39,13 @@ public class startactivity extends AppCompatActivity {
         meterno=findViewById(R.id.meterno);
         email=findViewById(R.id.email);
         signup=findViewById(R.id.signup);
+        generatebill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(startactivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
