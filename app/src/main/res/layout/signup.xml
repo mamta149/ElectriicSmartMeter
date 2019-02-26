@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/bitmap"
-    >
+    tools:context=".startactivity">
     <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,34 +17,25 @@
     <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your Email"
+        android:hint="Enter Your phoneno"
         android:layout_gravity="center"
         android:inputType="text"
-        android:id="@+id/email"
+        android:id="@+id/phoneno"
         />
 
-    <android.support.design.widget.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Create Password"
-        android:layout_gravity="center"
-        android:inputType="text"
-        android:id="@+id/createpwd"
-        />
-
-    <android.support.design.widget.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Confirm password"
-        android:inputType="text"
-        android:id="@+id/confirmpwd"
-        />
     <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Your EMeter No"
         android:inputType="text"
         android:id="@+id/meterno"
+        />
+    <android.support.design.widget.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your id"
+        android:inputType="text"
+        android:id="@+id/id"
         />
 
     <Button
@@ -55,11 +46,12 @@
         android:id="@+id/signup"
         android:text="signup"/>
     <TextView
-        android:text="generate your bill"
-        android:id="@+id/generatebill"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/edittext"/>
+        android:layout_marginTop="10dp"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="signup here"
+        android:id="@+id/signintext"
+        />
 
 
 
