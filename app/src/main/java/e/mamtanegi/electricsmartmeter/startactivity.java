@@ -64,10 +64,6 @@ public class startactivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
         layout1 = (LinearLayout) findViewById(R.id.layout1);
         layout2 = (LinearLayout) findViewById(R.id.layout2);
         textView =(TextView) findViewById(R.id.signuptext);
