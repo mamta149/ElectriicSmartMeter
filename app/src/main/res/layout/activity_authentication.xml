@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bitmap"
     tools:context=".authentication">
 
     <LinearLayout
+        android:layout_marginTop="80dp"
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/imageView"
         android:orientation="vertical"
         android:padding="15dp">
 
         <EditText
+
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,13 +27,16 @@
             android:inputType="phone" />
 
         <Button
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button"
             android:id="@+id/buttonGetVerificationCode"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="Get Verification Code"
             android:textAllCaps="false" />
 
         <EditText
+            android:layout_marginTop="30dp"
             android:id="@+id/editTextCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,9 +45,11 @@
             android:inputType="number" />
 
         <Button
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button"
             android:id="@+id/buttonSignIn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="Sign In" />
     </LinearLayout>
 

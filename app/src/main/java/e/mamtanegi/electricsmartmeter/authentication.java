@@ -1,5 +1,6 @@
 package e.mamtanegi.electricsmartmeter;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ public class authentication extends AppCompatActivity {
         findViewById(R.id.buttonGetVerificationCode).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
                 sendVerificationCode();
             }
         });
@@ -67,6 +69,10 @@ public class authentication extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            
+                            Intent intent=new Intent(authentication.this,MainActivity.class);
+                            startActivity(intent);
+                            Log.d(TAG, "onComplete: mmmm");
                             //here you can open new activity
                             Toast.makeText(getApplicationContext(),
                                     "Login Successfull", Toast.LENGTH_LONG).show();
