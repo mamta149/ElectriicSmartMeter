@@ -10,13 +10,18 @@
 <include layout="@layout/graphlayout"
     android:layout_height="match_parent"
     android:layout_width="match_parent"/>
+
+
+    <android.support.design.widget.TextInputEditext
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter your phone no"
+        android:id="@+id/phonenumber"/>
     <TextView
+        android:gravity="center"
+        android:id="@+id/generatebill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" Bill generate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Generate Your bill" />
 
 </android.support.constraint.ConstraintLayout>

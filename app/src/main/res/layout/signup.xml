@@ -14,14 +14,6 @@
         android:id="@+id/username"
         android:inputType="text"
         />
-    <android.support.design.widget.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Your phoneno"
-        android:layout_gravity="center"
-        android:inputType="text"
-        android:id="@+id/phoneno"
-        />
 
     <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
@@ -30,21 +22,43 @@
         android:inputType="text"
         android:id="@+id/meterno"
         />
-    <android.support.design.widget.TextInputEditText
+
+    <EditText
+
+        android:id="@+id/editTextPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your id"
-        android:inputType="text"
-        android:id="@+id/id"
-        />
+        android:digits="0123456789"
+        android:ems="10"
+        android:hint="Enter phone No"
+        android:inputType="phone" />
+
+
+    <Button
+        android:id="@+id/buttonGetVerificationCode"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button"
+        android:text="Get Verification Code"
+        android:textAllCaps="false" />
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/editTextCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789"
+        android:hint="Enter code received"
+        android:inputType="number" />
 
     <Button
         android:layout_marginTop="20dp"
         android:background="@drawable/button"
+        android:id="@+id/buttonSignIn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/signup"
-        android:text="signup"/>
+        android:layout_height="30dp"
+        android:text="Sign In" />
+
     <TextView
         android:layout_marginTop="10dp"
         android:layout_width="100dp"
@@ -52,7 +66,8 @@
         android:text="signup here"
         android:id="@+id/signintext"
         />
-
-
-
 </LinearLayout>
+
+
+
+
