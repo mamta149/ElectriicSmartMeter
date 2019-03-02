@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".startactivity">
     <include
         android:id="@+id/layout1"
         layout="@layout/signin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
     <include
         android:id="@+id/layout2"
         layout="@layout/signup"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
 
         />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
