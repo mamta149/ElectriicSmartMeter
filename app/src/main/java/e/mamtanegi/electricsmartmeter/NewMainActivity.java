@@ -1,10 +1,8 @@
 package e.mamtanegi.electricsmartmeter;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.design.widget.TextInputEditText;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,25 +12,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
-    TextView generatebill;
-      @Override
+public class NewMainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_new_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         setSupportActionBar(toolbar);
         GraphView graph = (GraphView) findViewById(R.id.graph);
@@ -44,6 +37,7 @@ public class MainActivity extends AppCompatActivity
                 new DataPoint(4, 6)
         });
         graph.addSeries(series);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +71,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.new_main, menu);
         return true;
     }
 

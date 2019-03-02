@@ -128,7 +128,7 @@ public class startactivity extends AppCompatActivity {
                                 }
                             });
 
-                            Intent intent = new Intent(startactivity.this, MainActivity.class);
+                            Intent intent = new Intent(startactivity.this, NewMainActivity.class);
                             startActivity(intent);
                             Log.d(TAG, "onComplete: mmmm");
                             //here you can open new activity
