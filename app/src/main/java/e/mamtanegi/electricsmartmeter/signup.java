@@ -1,37 +1,17 @@
 package e.mamtanegi.electricsmartmeter;
 
-public class signup {
-    private String username;
-    private int meterno;
-    private float phoneno;
-    public signup() {
+public class signup{
+    private double phoneno;
+    public signup(float v) {
 
     }
 
-    public signup(String username, float phoneno, int meterno) {
-        this.username = username;
+    public signup(String username, double phoneno, int meterno) {
         this.phoneno = phoneno;
-        this.meterno = meterno;
 
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public int getMeterno() {
-        return meterno;
-    }
-
-    public void setMeterno(int meterno) {
-        this.meterno = meterno;
-    }
-
-    public float getPhoneno() {
+    public double getPhoneno() {
         return phoneno;
     }
 

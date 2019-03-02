@@ -14,13 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -28,6 +25,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class startactivity extends AppCompatActivity {
@@ -37,6 +35,7 @@ public class startactivity extends AppCompatActivity {
     EditText editTextPhone, editTextCode;
     private static final String TAG = "startactivity";
     TextInputEditText username;
+    TextInputEditText uname;
 
     FirebaseAuth mAuth;
 
@@ -44,6 +43,7 @@ public class startactivity extends AppCompatActivity {
         private FirebaseFirestore db;
     TextInputEditText meterno;
     Button signup;
+    ArrayList<UserLoginData> usersdata;
 
 
     @Override
@@ -78,16 +78,19 @@ public class startactivity extends AppCompatActivity {
 
         FirebaseApp.initializeApp(this);
 
-        meterno=findViewById(R.id.meterno);
-        editTextCode = findViewById(R.id.editTextCode);
+       // meterno=findViewById(R.id.meterno);
+       editTextCode = findViewById(R.id.editTextCode);
         editTextPhone = findViewById(R.id.editTextPhone);
-        username=findViewById(R.id.username);
+       // username=findViewById(R.id.username);
 
         findViewById(R.id.buttonGetVerificationCode).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 sendVerificationCode();
+                
+
+                
             }
         });
 
@@ -98,6 +101,26 @@ public class startactivity extends AppCompatActivity {
                 verifySignInCode();
             }
         });
+    }
+
+
+    private boolean userDetailsVerify(){
+
+        usersdata = retrieveData();
+        for (UserLoginData userLoginData:usersdata){
+            if(userLoginData.phonenumber==Double.parseDouble(editTextPhone.getText().toString())){
+                Log.d(TAG, "onClick: successfull login");
+                return true;
+
+            }
+        }
+        return  false;
+    }
+    
+    private ArrayList<UserLoginData> retrieveData(){
+        DataRetrieve dataRetrieve=new DataRetrieve(this);
+        return dataRetrieve.getUserslogindata();
+        
     }
 
     private void verifySignInCode() {
@@ -112,29 +135,18 @@ public class startactivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            signup sign = new signup(username.getText().toString(),Float.parseFloat(editTextPhone.getText()
-                                    .toString()),Integer.parseInt(meterno.getText().toString()));
+                            signup sign = new signup(Float.parseFloat(editTextPhone.getText().toString().trim()));
 
-                            db.collection("userdetails").document().set(sign).addOnSuccessListener
-                                    (new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Log.d(TAG, "onSuccess: ");
-                                        }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFail" + e.toString());
-                                }
-                            });
+                            if(userDetailsVerify()) {
 
-                            Intent intent = new Intent(startactivity.this, NewMainActivity.class);
-                            startActivity(intent);
-                            Log.d(TAG, "onComplete: mmmm");
+                                Intent intent = new Intent(startactivity.this, NewMainActivity.class);
+                                startActivity(intent);
+                                Log.d(TAG, "onComplete: mmmm");
+                            }else {
+                                Toast.makeText(getApplicationContext()," user details not matching", Toast.LENGTH_LONG).show();
+                            }
                             //here you can open new activity
-                            Toast.makeText(getApplicationContext(),
-                                    "Login Successfull", Toast.LENGTH_LONG).show();
-                        } else {
+                           } else {
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 Toast.makeText(getApplicationContext(),
                                         "Incorrect Verification Code ", Toast.LENGTH_LONG).show();
